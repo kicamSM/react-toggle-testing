@@ -13,5 +13,8 @@ test('button clicks', () => {
     expect(h2).not.toHaveTextContent('0');    
 } )
 
-const { debug } = render(<Counter />);
-debug;
+const {debug, getByText} = render(<Counter/>);
+debug(); 
+
+fireEvent.click(getByText('Add'));
+debug();
